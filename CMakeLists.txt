@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.18)
+cmake_minimum_required(VERSION 3.16)
 project(jsonlogic VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -49,7 +49,7 @@ add_library(
         src/operations/string/substr.cpp
 )
 
-find_package(nlohmann_json 3.9.1 REQUIRED)
+find_package(nlohmann_json 3.7.3 REQUIRED)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json)
 add_library(jsonlogic::jsonlogic ALIAS jsonlogic)
