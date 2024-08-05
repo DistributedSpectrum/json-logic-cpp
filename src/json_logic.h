@@ -73,7 +73,9 @@ namespace json_logic
 		json operation_numeric_modulo(const json& values, const json& data);
 
 		json operation_array_map(const json& values, const json& data);
+#ifndef NO_EXECUTION
 		json operation_array_reduce(const json& values, const json& data);
+#endif
 		json operation_array_filter(const json& values, const json& data);
 		json operation_array_all(const json& values, const json& data);
 		json operation_array_none(const json& values, const json& data);

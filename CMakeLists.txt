@@ -5,9 +5,11 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(src)
 
+set(USE_EXECUTION ON)
 try_compile(HAVE_EXECUTION ${CMAKE_BINARY_DIR} ${PROJECT_SOURCE_DIR}/src/executiontest.cpp)
 if(NOT HAVE_EXECUTION)
-        message(FATAL_ERROR "Compiler seems to be old, unable to compile this source")
+        set(USE_EXECUTION OFF)
+        add_compile_definitions(NO_EXECUTION)
 endif()
 
 add_library(
@@ -21,7 +23,7 @@ add_library(
         src/operations/array/map.cpp
         src/operations/array/merge.cpp
         src/operations/array/none.cpp
-        src/operations/array/reduce.cpp
+        #  src/operations/array/reduce.cpp
         src/operations/array/some.cpp
         src/operations/data/missing.cpp
         src/operations/data/missing_some.cpp
@@ -48,6 +50,13 @@ add_library(
         src/operations/string/cat.cpp
         src/operations/string/substr.cpp
 )
+
+if(USE_EXECUTION)
+    add_library(
+        ${PROJECT_NAME}
+        src/operations/array/reduce.cpp
+    )
+endif()
 
 find_package(nlohmann_json 3.7.3 REQUIRED)
 
