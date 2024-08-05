@@ -41,7 +41,9 @@ namespace json_logic
 		operations_.insert({"%", MAKE_OPERATION(operation_numeric_modulo)});
 
 		operations_.insert({"map", MAKE_OPERATION(operation_array_map)});
+#ifndef NO_EXECUTION
 		operations_.insert({"reduce", MAKE_OPERATION(operation_array_reduce)});
+#endif
 		operations_.insert({"filter", MAKE_OPERATION(operation_array_filter)});
 		operations_.insert({"all", MAKE_OPERATION(operation_array_all)});
 		operations_.insert({"none", MAKE_OPERATION(operation_array_none)});
