@@ -1,6 +1,6 @@
 #include "json_logic.h"
 
-#include "nlohmann/json.hpp"
+#include "json.hpp"
 
 using namespace nlohmann;
 

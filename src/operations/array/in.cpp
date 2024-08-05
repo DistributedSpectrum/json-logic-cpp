@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <string>
 
-#include "nlohmann/json.hpp"
+#include "json.hpp"
 
 using namespace nlohmann;
 

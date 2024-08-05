@@ -58,9 +58,7 @@ if(USE_EXECUTION)
     )
 endif()
 
-find_package(nlohmann_json 3.7.3 REQUIRED)
-
-target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json)
+#target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json)
 add_library(jsonlogic::jsonlogic ALIAS jsonlogic)
 
 target_include_directories(

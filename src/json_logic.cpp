@@ -2,7 +2,7 @@
 
 #include <algorithm>
 
-#include "nlohmann/json.hpp"
+#include "json.hpp"
 
 #define MAKE_OPERATION(operation) [this](const json& values, const json& data) { return operation(values, data); }
 
